@@ -1,0 +1,32 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Today's Menu
+{% endblock %}
+
+{% block nav %}
+<li class="nav-item"><a class="nav-link" href="/messc">Mess Committee</a></li>
+<li class="nav-item"><a class="nav-link" href="wmenu">Week's Menu</a></li>
+<li class="nav-item"><a class="nav-link" href="/archive">Menu Archive</a></li>
+{% endblock %}
+
+{% block main %}
+    <h2><kbd>Monday's Menu</kbd></h2>
+    <table class="table table-responsive mr-2" id="tmenu" style="margin-left: auto; margin-right: auto;">
+        <thead>
+            {% for column in columns %}
+            <th>{{ column }}</th>
+            {% endfor %}
+        </thead>
+
+        <tbody>
+            {% for data in rows %}
+                <tr>
+                    {% for row in data %}
+                        <td>{{ row }}</td>
+                    {% endfor %}
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}

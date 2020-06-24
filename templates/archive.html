@@ -1,0 +1,22 @@
+{% extends "layout.html" %}
+
+{% block title %}
+Menu Archive
+{% endblock %}
+
+{% block nav %}
+<li class="nav-item"><a class="nav-link" href="/messc">Mess Committee</a></li>
+<li class="nav-item"><a class="nav-link" href="/tmenu">Today's Menu</a></li>
+<li class="nav-item"><a class="nav-link" href="wmenu">Week's Menu</a></li>
+{% endblock %}
+
+{% block main %}
+
+<!-- Auto width -->
+<button class="btn">
+    <i class="fas fa-file-pdf"></i>
+    <a href="/FPCS50/april2020.pdf" download>April 2020</a><br>
+    <i class="fas fa-file-pdf"></i>
+    <a href="/FPCS50/may2020.pdf" download>May 2020</a>
+</button>
+{% endblock %}

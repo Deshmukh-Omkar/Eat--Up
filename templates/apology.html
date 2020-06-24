@@ -1,0 +1,18 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Apology
+{% endblock %}
+
+{% block main %}
+    <h2><p class="text-info">{{info}}</p></h2>
+    <script>
+    function goBack() {
+      window.history.back();
+    }
+
+    window.onload = function() {
+   setTimeout(goBack, 3000);
+    }
+    </script>
+{% endblock %}

@@ -1,0 +1,52 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Week's Menu
+{% endblock %}
+
+{% block nav %}
+<li class="nav-item"><a class="nav-link" href="/messc">Mess Committee</a></li>
+<li class="nav-item"><a class="nav-link" href="/tmenu">Today's Menu</a></li>
+<li class="nav-item"><a class="nav-link" href="/archive">Menu Archive</a></li>
+{% endblock %}
+
+{% block main %}
+    <h2><kbd>Week's Menu for May</kbd></h2>
+    <table class="table-responsive table" id="wmenu">
+        <thead>
+            {% for column in columns %}
+            <th>{{ column }}</th>
+            {% endfor %}
+        </thead>
+
+        <tbody>
+            {% for data in rows %}
+                <tr>
+                    {% for row in data %}
+                        <td>{{ row }}</td>
+                    {% endfor %}
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    <input class="btn btn-primary" type="button" id="btnExport" value="Export" onclick="Export()" />
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.22/pdfmake.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.4.1/html2canvas.min.js"></script>
+    <script type="text/javascript">
+        function Export() {
+            html2canvas(document.getElementById('wmenu'), {
+                onrendered: function (canvas) {
+                    var data = canvas.toDataURL();
+                    var docDefinition = {
+                        content: [{
+                            image: data,
+                            width: 500
+                        }]
+                    };
+                    pdfMake.createPdf(docDefinition).download("Week Menu.pdf");
+                }
+            });
+        }
+    </script>
+{% endblock %}

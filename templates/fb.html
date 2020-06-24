@@ -1,0 +1,32 @@
+{% extends "layout.html" %}
+
+{% block title %}
+Feedback
+{% endblock %}
+
+{% block nav %}
+<li class="nav-item"><a class="nav-link" href="/messc">Mess Committee</a></li>
+<li class="nav-item"><a class="nav-link" href="/tmenu">Today's Menu</a></li>
+<li class="nav-item"><a class="nav-link" href="wmenu">Week's Menu</a></li>
+<li class="nav-item"><a class="nav-link" href="/archive">Menu Archive</a></li>
+{% endblock %}
+
+{% block main %}
+<form action="/feedback" method="POST">
+    <div class="radio radio-inline p-1">
+        <label><input type="radio" name="category" value="complaint">Complaint</label>
+        <label><input type="radio" name="category" value="web issue">Website Issue</label>
+        <label><input type="radio" name="category" value="suggestion">Suggestion</label>
+    </div>
+    <div class="form-group">
+        <input autocomplete="off" class="form-control" name="name" placeholder="Name" type="text">
+    </div>
+    <div class="form-group">
+        <input autocomplete="off" class="form-control" name="email" placeholder="E-Mail ID" type="text">
+    </div>
+    <div class="form-group">
+        <textarea class="form-control" rows="5" name="comment"></textarea>
+    </div>
+    <button class="btn btn-primary" type="submit">Submit!</button>
+</form>
+{% endblock %}

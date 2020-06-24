@@ -1,0 +1,40 @@
+{% extends "layout.html" %}
+
+{% block title %}
+Mess Committee
+{% endblock %}
+
+{% block nav %}
+<li class="nav-item"><a class="nav-link" href="/messc">Mess Committee</a></li>
+<li class="nav-item"><a class="nav-link" href="/tmenu">Today's Menu</a></li>
+<li class="nav-item"><a class="nav-link" href="wmenu">Week's Menu</a></li>
+<li class="nav-item"><a class="nav-link" href="/archive">Menu Archive</a></li>
+{% endblock %}
+
+{% block main %}
+<table class="table">
+    <thead>
+        <th>Tony Stark</th>
+        <th>Black Widow</th>
+        <th>Spiderman</th>
+    </thead>
+
+    <tbody>
+        <tr>
+            <td><img src="/static/images/boy2.jpg"></td>
+            <td><img src="/static/images/girl1.jpg"></td>
+            <td><img src="/static/images/boy1.jpg"></td>
+        </tr>
+        <tr>
+            <td>3rd Year</td>
+            <td>1st Year</td>
+            <td>2nd Year</td>
+        </tr>
+        <tr>
+            <td><a href="mailto:tonystark@eatup.com" subject="Mess: ">tonystark@eatup.com</a></td>
+            <td><a href="mailto:blackwidow@eatup.com" subject="Mess: ">blackwidow@eatup.com</a></td>
+            <td><a href="mailto:spiderman@eatup.com" subject="Mess: ">spiderman@eatup.com</a></td>
+        </tr>
+    </tbody>
+</table>
+{% endblock %}
